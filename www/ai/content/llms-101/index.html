@@ -1,0 +1,522 @@
+<!doctype html>
+<!--
+    Mozilla AI Guide |
+    We need your help to make OSS AI best-in-class!  
+    Reach out to ai-guide@mozilla.com to contribute! 
+    
+    This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+<html lang="en" data-theme="moz_ai_guide_base">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mozilla AI Guide</title>
+    <meta name="description" content="Mozilla AI Guide" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mozilla" />
+    <meta property="og:image" content="/img/mozilla-256.jpg" />
+    <meta property="og:title" content="Mozilla AI Guide" />
+    <meta property="og:description" content="Mozilla AI Guide" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@mozilla" />
+    <meta name="twitter:domain" content="future.mozilla.org" />
+
+    <link rel="stylesheet" href="/css/ai.e9ce9d34.css" />
+    <script
+      type="text/javascript"
+      src="/scripts/dark_mode.ce5d9712.js"
+    ></script>
+  </head>
+  <body>
+    <div class="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <!-- <div class="drawer-content flex flex-col items-center justify-center relative"> -->
+      <div class="drawer-content">
+        <div id="mobile_banner">
+          <label id="hamburger-btn" class="" for="my-drawer-2">
+            <svg
+              viewBox="0 0 100 80"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <rect width="100" height="10" rx="8"></rect>
+              <rect y="30" width="80" height="10" rx="8"></rect>
+              <rect y="60" width="60" height="10" rx="8"></rect>
+            </svg>
+          </label>
+
+          <div id="header-bg">
+            <div id="header-content">
+              <a href="/ai/home">
+                <h1 id="header-title">AI Guide</h1>
+              </a>
+            </div>
+          </div>
+        </div>
+        <main id="content" class="">
+          <h2 id="llms-101" tabindex="-1">LLMs 101</h2>
+          <h3
+            id="what-do-these-numbers-mean-in-the-names-of-models"
+            tabindex="-1"
+          >
+            What do these numbers mean in the names of models?
+          </h3>
+          <p>
+            For example: “Vicuna-13B”. The name of the model is Vicuna, and it
+            has 13 billion parameters.
+          </p>
+          <h3 id="what-is-a-parameter" tabindex="-1">What is a parameter?</h3>
+          <p>
+            An LLM parameter is a value that the model learns during training.
+            These values are adjusted through a process called backpropagation,
+            which involves calculating the error between the model’s predictions
+            and the actual output and adjusting the parameters to minimize this
+            error. The number of parameters in an LLM is typically very large,
+            often numbering in the millions or even billions. These parameters
+            capture the relationships between different words and phrases in
+            language, allowing the model to generate human-like output and make
+            accurate predictions. Without these parameters, an LLM would not be
+            able to perform natural language processing tasks at a high level of
+            accuracy.
+          </p>
+          <h3 id="what-does-training-an-llm-mean" tabindex="-1">
+            What does “training” an LLM mean?
+          </h3>
+          <p>
+            Training an LLM involves exposing it to large amounts of data so
+            that it can learn patterns and make accurate predictions. During
+            training, the parameters of the model are adjusted based on the
+            input data and desired output. This process can take a significant
+            amount of time and computational resources, but it is essential for
+            achieving high levels of accuracy in natural language processing
+            tasks.
+          </p>
+          <h3 id="how-does-a-typical-training-run-work" tabindex="-1">
+            How does a typical training run work?
+          </h3>
+          <p>
+            During a typical training run, the LLM is fed with a large amount of
+            text data and corresponding targets. The model then uses these
+            inputs to update its parameters through an optimization algorithm
+            like stochastic gradient descent (SGD) or Adam.
+          </p>
+          <p>
+            During training, the network makes predictions on a batch of input
+            data and calculates the loss, which is a measure of how well the
+            predictions match the actual output. The optimizer then adjusts the
+            weights of the network using backpropagation to minimize the loss.
+            This process is repeated iteratively for a fixed number of epochs or
+            until a convergence criterion is met. The process of updating the
+            model’s parameters continues iteratively until the model reaches a
+            satisfactory level of accuracy on the training set.
+          </p>
+          <p>
+            It’s worth noting that training an LLM can be a resource-intensive
+            process, requiring significant computational power and time.
+          </p>
+          <h3 id="what-is-backpropagation" tabindex="-1">
+            What is backpropagation?
+          </h3>
+          <p>
+            Backpropagation is a process used to adjust the parameters of an LLM
+            during training. It involves calculating the error between the
+            model’s predictions and the actual output and adjusting the
+            parameters to minimize this error.
+          </p>
+          <p>
+            The process starts by making a forward pass through the neural
+            network, where input data is fed into the model, and output data is
+            generated. The difference between the predicted output and the
+            actual output is then calculated using a loss function. This loss
+            value is then backpropagated through the network, starting from the
+            last layer and moving backward towards the first layer.
+          </p>
+          <p>
+            As it moves backward, each layer updates its weights based on how
+            much it contributed to the final loss value. This process continues
+            until all layers have updated their weights, resulting in a new set
+            of parameters that hopefully improve the model’s performance on
+            future inputs.
+          </p>
+          <h3 id="what-does-fine-tuning-an-llm-mean" tabindex="-1">
+            What does “fine-tuning” an LLM mean?
+          </h3>
+          <p>
+            Fine-tuning an LLM involves taking a pre-trained language model and
+            providing additional training using task-specific data sets. This
+            process typically requires less data than training a model from
+            scratch and can be done relatively quickly. Fine-tuning has become
+            increasingly popular in recent years as more pre-trained models have
+            become available.
+          </p>
+          <h3 id="human-in-the-loop-approach" tabindex="-1">
+            “Human in the loop” approach
+          </h3>
+          <p>
+            The “human in the loop” approach involves incorporating human
+            feedback into machine learning models to improve their accuracy and
+            performance. In the context of natural language processing, this
+            might involve having humans review text generated by an LLM and
+            provide feedback on its quality, which can then be used to fine-tune
+            the model. Human in the loop approach is valuable because it can be
+            used to reduce bias and errors and make usage of AI more
+            trustworthy.
+          </p>
+          <h3 id="what-does-inference-mean" tabindex="-1">
+            What does “inference” mean?
+          </h3>
+          <p>
+            Inference refers to the process of using a trained machine learning
+            model to make predictions or decisions based on new input data. In
+            other words, it’s the application of a trained model to real-world
+            data in order to obtain useful insights or take action based on
+            those insights. When performing inference with an LLM, the model
+            takes in new text as input and generates output text based on what
+            it has learned during training and fine-tuning. Inference is a
+            critical step in the machine learning workflow, as it allows models
+            to be used for practical applications such as chatbots, language
+            translation, and sentiment analysis.
+          </p>
+          <h3 id="is-inference-computationally-expensive" tabindex="-1">
+            Is inference computationally expensive?
+          </h3>
+          <p>
+            YES, especially for larger models with more parameters. To address
+            this, some LLMs use techniques such as beam search or sampling to
+            generate output text more efficiently. Additionally, some cloud
+            providers offer pre-trained LLMs that can be accessed via APIs for a
+            fee, which can help reduce the computational burden of running an
+            LLM locally.
+          </p>
+          <h3 id="what-is-a-vector" tabindex="-1">What is a vector?</h3>
+          <p>
+            A vector is a mathematical object that has both magnitude and
+            direction. In the context of natural language processing, vectors
+            are often used to represent words or phrases in a way that captures
+            their meaning and relationship to other words. This is typically
+            done using techniques such as word embeddings, which map each word
+            to a high-dimensional vector based on its co-occurrence with other
+            words in a large corpus of text.
+          </p>
+          <h3 id="what-is-beam-search" tabindex="-1">What is beam search?</h3>
+          <p>
+            Beam search is an algorithm used to generate output sequences from
+            an LLM during inference. It works by maintaining a set of the top k
+            most likely sequences at each step of the generation process, where
+            k is known as the beam width. The algorithm then continues
+            generating new tokens for each sequence in the set until all
+            sequences have reached an end-of-sequence token or a maximum length
+            has been reached. At each step, the set of possible sequences is
+            pruned based on their likelihood according to the model’s
+            predictions, resulting in a final set of top-k output sequences.
+          </p>
+          <h3 id="what-is-sampling" tabindex="-1">What is sampling?</h3>
+          <p>
+            Sampling is another algorithm used to generate output sequences from
+            an LLM during inference. Unlike beam search, which generates only
+            the top-k most likely sequences at each step, sampling generates
+            output tokens probabilistically based on the model’s predicted
+            probability distribution over all possible tokens at that step. This
+            can lead to more diverse and creative output compared to beam
+            search, but it can also result in less coherent or grammatical
+            sentences if not properly controlled through techniques such as
+            temperature scaling or nucleus sampling.
+          </p>
+          <h3 id="what-is-temperature" tabindex="-1">What is temperature?</h3>
+          <p>
+            Temperature is a technique used in LLMs to control the level of
+            randomness and creativity in the generated output during inference.
+            It works by scaling the predicted probability distribution over
+            possible tokens at each step by a temperature parameter, which
+            controls how much the probabilities are “softened” or spread out.
+          </p>
+          <p>
+            Lower temperatures result in more conservative and predictable
+            output, while higher temperatures lead to more diverse and creative
+            output. However, setting the temperature too high can also lead to
+            nonsensical or ungrammatical sentences. Finding the optimal
+            temperature for a given task or application often requires
+            experimentation and fine-tuning.
+          </p>
+        </main>
+        <footer id="footer" class="mzp-c-footer">
+          <div class="mzp-l-content">
+            <nav class="mzp-c-footer-secondary">
+              <div class="container">
+                <ul class="mzp-c-footer-terms">
+                  <li>
+                    <a
+                      href="https://www.mozilla.org/privacy/websites/"
+                      data-link-type="footer"
+                      data-link-name="Privacy"
+                      >Website Privacy Notice</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.mozilla.org/privacy/websites/#user-choices"
+                      data-link-type="footer"
+                      data-link-name="Cookies"
+                      >Cookies</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.mozilla.org/about/legal/"
+                      data-link-type="footer"
+                      data-link-name="Legal"
+                      >Legal</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.mozilla.org/about/governance/policies/participation/"
+                      data-link-type="footer"
+                      data-link-name="Community Participation Guidelines"
+                      >Community Participation Guidelines</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.mozilla.org/about/this-site/"
+                      data-link-type="footer"
+                      data-link-name="About this site"
+                      >About this site</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="container">
+                <div class="mzp-c-footer-license leading-6" rel="license">
+                  Visit
+                  <a href="https://www.mozilla.org/" class="underline"
+                    >Mozilla Corporation’s</a
+                  >
+                  not-for-profit parent, the
+                  <a
+                    href="https://foundation.mozilla.org/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;utm_campaign=footer"
+                    class="underline"
+                    rel="external noopener"
+                    >Mozilla Foundation</a
+                  >. Portions of this content are ©1998–2023 by individual
+                  mozilla.org contributors. Content available under a
+                  <a
+                    rel="license"
+                    href="https://www.mozilla.org/foundation/licensing/website-content/"
+                    >Creative Commons license</a
+                  >.
+                </div>
+              </div>
+            </nav>
+          </div>
+        </footer>
+      </div>
+      <div class="drawer-side">
+        <label for="my-drawer-2" class="drawer-overlay"></label>
+        <!-- <button id="sidebar-close-btn" class="drawer-button">X</button> -->
+
+        <ul class="menu">
+          <li>
+            <a href="/ai/home"
+              ><img
+                alt="Mozilla logo"
+                class="dark:[filter:invert(1)]"
+                id="sidebar-logo"
+                src="/img/mozilla-only.c3f76b0f.png"
+            /></a>
+          </li>
+          <li>
+            <details closed="">
+              <summary>
+                <a href="/ai/content/introduction/">Introduction</a>
+              </summary>
+              <ul class="sub_menu">
+                <li>
+                  <a href="/ai/content/introduction/#why-this-guide"
+                    >Why this guide?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/introduction/#why-mozilla"
+                    >Why Mozilla?</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details closed="">
+              <summary>
+                <a href="/ai/content/ai-basics/">AI Basics</a>
+              </summary>
+              <ul class="sub_menu">
+                <li>
+                  <a href="/ai/content/ai-basics/#what-is-ai-in-2023"
+                    >What is AI in 2023?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/ai-basics/#why-are-people-excited-about-llms"
+                    >Why are people excited about LLMs?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/ai-basics/#why-are-people-concerned-about-llms"
+                    >Why are people concerned about LLMs?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/ai-basics/#what-exactly-is-an-llm"
+                    >What exactly is an LLM?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/ai-basics/#what-are-the-pros-cons-of-using-an-llm"
+                    >What are the pros &amp; cons of using an LLM?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/ai-basics/#what-new-behaviors-do-llms-unlock"
+                    >What new behaviors do LLMs unlock?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/ai-basics/#what-are-the-components-of-transformer-based-pre-trained-llms"
+                    >What are the components of Transformer-based, pre-trained
+                    LLMs?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/ai-basics/#when-i-send-a-transformer-based-llm-a-prompt-what-happens-internally-in-more-technical-terms"
+                    >When I send a Transformer-based LLM a “prompt”, what
+                    happens internally in more technical terms?</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details closed="">
+              <summary>
+                <a href="/ai/content/llms-101/">LLMs 101</a>
+              </summary>
+              <ul class="sub_menu">
+                <li>
+                  <a
+                    href="/ai/content/llms-101/#what-do-these-numbers-mean-in-the-names-of-models"
+                    >What do these numbers mean in the names of models?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-is-a-parameter"
+                    >What is a parameter?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-does-training-an-llm-mean"
+                    >What does “training” an LLM mean?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/llms-101/#how-does-a-typical-training-run-work"
+                    >How does a typical training run work?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-is-backpropagation"
+                    >What is backpropagation?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/llms-101/#what-does-fine-tuning-an-llm-mean"
+                    >What does “fine-tuning” an LLM mean?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#human-in-the-loop-approach"
+                    >“Human in the loop” approach</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-does-inference-mean"
+                    >What does "inference" mean?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/ai/content/llms-101/#is-inference-computationally-expensive"
+                    >Is inference computationally expensive?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-is-a-vector"
+                    >What is a vector?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-is-beam-search"
+                    >What is beam search?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-is-sampling"
+                    >What is sampling?</a
+                  >
+                </li>
+                <li>
+                  <a href="/ai/content/llms-101/#what-is-temperature"
+                    >What is temperature?</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li class="upcoming">
+            <a disabled="">
+              <div class="badge">Up Next</div>
+              Choosing ML models</a
+            >
+          </li>
+          <li class="upcoming">
+            <a disabled="">
+              <div class="badge">Up Next</div>
+              Fine-tuning</a
+            >
+          </li>
+          <li class="upcoming">
+            <a disabled="">
+              <div class="badge">Up Next</div>
+              LLMs from scratch</a
+            >
+          </li>
+          <li class="upcoming">
+            <a disabled="">
+              <div class="badge">Up Next</div>
+              Images, Audio &amp; Video</a
+            >
+          </li>
+        </ul>
+      </div>
+      <script type="text/javascript">
+        const sidebarDrawer = document.getElementById("my-drawer-2");
+        document.querySelectorAll("ul.menu li a").forEach(function (item) {
+          item.addEventListener("click", function () {
+            sidebarDrawer.checked = false;
+            return true;
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>
